@@ -1,13 +1,9 @@
-import NodeCache from "node-cache";
 import { type NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 import { GameState } from "../../Types";
 import { INITIAL_STATE, makeMines, reveal } from "./mineUtils";
 import puppeteer from "puppeteer";
-
-const gameCache = new NodeCache({ stdTTL: 0 });
-
-const GAME_CACHE_KEY = "MY_GAME_KEY";
+import { gameCache, GAME_CACHE_KEY } from "../GameStateCache";
 
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;

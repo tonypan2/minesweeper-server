@@ -38,8 +38,9 @@ npm run dev
 
 The server will be running at:
 
-- [http://localhost:5000](http://localhost:5000) for the UI
+- [http://localhost:5000](http://localhost:5000) for the UI that renders the board - intended for use by AI agent
 - [http://localhost:5000/api/play](http://localhost:5000/api/play) for the API
+- [http://localhost:5000/view](http://localhost:5000/view) for UI that auto refreshes to reflect the latest game state - useful for debugging
 
 ## API
 
@@ -47,3 +48,4 @@ The server will be running at:
 - `GET /api/play?reveal&pos=<row>,<col>`: Reveal the cell at `(row, col)`
 - `GET /api/play?flag&pos=<row>,<col>`: Flag the cell at `(row, col)`
 - `GET /api/play?unflag&pos=<row>,<col>`: Unflag the cell at `(row, col)`
+- `GET /api/view`: View the game state as JSON
